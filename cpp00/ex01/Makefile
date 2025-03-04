@@ -1,6 +1,6 @@
 NAME = phonebook
-SRCS = main.cpp
-# INCLUDE = Contact.hpp Phonebook.hpp
+SRCS = main.cpp Contact.cpp PhoneBook.cpp
+INCLUDE = Contact.hpp PhoneBook.hpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
@@ -9,8 +9,8 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 .cpp.o:
 		${CC} ${CFLAGS} -c $< -o $@
 
-${NAME}: ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o $@
+${NAME}: ${OBJS} ${INCLUDE}
+		${CC} ${CFLAGS} -I ./ -o $@ ${OBJS}
 
 all: ${NAME}
 
@@ -22,4 +22,4 @@ fclean: clean;
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re

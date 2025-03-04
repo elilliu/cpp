@@ -1,11 +1,13 @@
-// #include "PhoneBook.hpp"
-// #include "Contact.hpp"
-#include <iostream>
 #include <iomanip>
-#include <vector>
-#include <unistd.h>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-void	interface()
+void	display_help()
+{
+	std::cout << "ADD: Add a new contact to the phonebook.\nSEARCH: Display contact informations.\nEXIT: Exit phonebook.\n" << std::endl;
+}
+
+void	interface(PhoneBook book)
 {
 	std::string input;
 
@@ -16,12 +18,26 @@ void	interface()
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			break;
+		if (input == "ADD")
+			book.add();
+		else if (input == "SEARCH")
+		{
+			book.display();
+			std::cout << "Press a key to exit." << std::endl;
+			std::getline(std::cin, input);
+		}
+		else if (input == "HELP")
+		{
+			display_help();
+			std::cout << "Press a key to exit." << std::endl;
+			std::getline(std::cin, input);
+		}
 	}
 }
 
 int		main()
 {
-	// PhoneBook book;
-	interface();
+	PhoneBook book;
+	interface(book);
 	return (0);
 }
