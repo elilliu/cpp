@@ -4,6 +4,8 @@
 
 void	display_help()
 {
+	std::cout << "\033[2J\033[;H";
+	std::cout << "HELP\n" << std::endl;
 	std::cout << "ADD: Add a new contact to the phonebook.\nSEARCH: Display contact informations.\nEXIT: Exit phonebook.\n" << std::endl;
 }
 

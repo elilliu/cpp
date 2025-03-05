@@ -40,26 +40,26 @@ int	Contact::valid_number(std::string str)
 
 void	Contact::info_summary()
 {
-	std::cout << this->_index << "        |";
+	std::cout << "        " << this->_index << " |";
 
 	if (this->_firstname.size() > 8)
-		std::cout << " " << this->_firstname.substr(0, 7) << ".|";
+		std::cout << " " << this->_firstname.substr(0, 8) << ".|";
 	else
 	{
 		std::cout << std::setw(11);
-		std::cout << this->_firstname << " |";
+		std::cout << this->_firstname + " |";
 	}
 
 	if (this->_lastname.size() > 8)
-		std::cout << " " << this->_lastname.substr(0, 7) << ".|";
+		std::cout << " " << this->_lastname.substr(0, 8) << ".|";
 	else
 	{
 		std::cout << std::setw(11);
-		std::cout << this->_lastname << " |";
+		std::cout << this->_lastname + " |";
 	}
 
 	if (this->_nickname.size() > 8)
-		std::cout << " " << this->_nickname.substr(0, 7) << ".";
+		std::cout << " " << this->_nickname.substr(0, 8) << ".";
 	else
 	{
 		std::cout << std::setw(9);
@@ -76,4 +76,5 @@ void	Contact::info_complete()
 	std::cout << "Nickname: " << this->_nickname << std::endl;
 	std::cout << "Phone number: " << this->_phone_number << std::endl;
 	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
+	std::cout << std::endl;
 }
