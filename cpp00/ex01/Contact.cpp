@@ -9,8 +9,11 @@ Contact::Contact(int nb)
 {
 	this->_index = nb;
 
-	std::cout << "First name: ";
-	std::getline(std::cin, this->_firstname);
+	do
+	{
+		std::cout << "*MANDATORY* First name: ";
+		std::getline(std::cin, this->_firstname);
+	} while (this->_firstname.empty());
 
 	std::cout << "Last name: ";
 	std::getline(std::cin, this->_lastname);
@@ -20,9 +23,9 @@ Contact::Contact(int nb)
 
 	do
 	{
-		std::cout << "Phone number: ";
+		std::cout << "*MANDATORY* Phone number: ";
 		std::getline(std::cin, this->_phone_number);
-	} while (!this->valid_number(_phone_number));
+	} while (this->_phone_number.empty() || !this->valid_number(_phone_number));
 
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, this->_darkest_secret);
