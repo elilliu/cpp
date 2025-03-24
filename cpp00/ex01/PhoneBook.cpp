@@ -12,6 +12,8 @@ void	PhoneBook::add()
 	std::cout << "ADDING NEW CONTACT\n" << std::endl;
 
 	Contact newcontact(this->_book_size % 8);
+	if (std::cin.eof())
+		return ;
 	this->_contacts[this->_book_size % 8] = newcontact;
 	this->_book_size++;
 	std::cout << "New contact added" << std::endl;
@@ -44,5 +46,6 @@ void	PhoneBook::display()
 		if (std::cin.eof())
 			return ;
 	} while (input.empty() || !std::isdigit(input[0]) || input.size() > 1 || std::atoi(input.c_str()) > nb - 1);
+	std::cout << std::endl;
 	this->_contacts[std::atoi(input.c_str())].info_complete();
 }

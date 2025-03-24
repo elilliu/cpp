@@ -13,22 +13,32 @@ Contact::Contact(int nb)
 	{
 		std::cout << "*MANDATORY* First name: ";
 		std::getline(std::cin, this->_firstname);
+		if (std::cin.eof())
+			return ;
 	} while (this->_firstname.empty());
 
 	std::cout << "Last name: ";
 	std::getline(std::cin, this->_lastname);
+	if (std::cin.eof())
+		return ;
 
 	std::cout << "Nickname: ";
 	std::getline(std::cin, this->_nickname);
+	if (std::cin.eof())
+		return ;
 
 	do
 	{
 		std::cout << "*MANDATORY* Phone number: ";
 		std::getline(std::cin, this->_phone_number);
+		if (std::cin.eof())
+			return ;
 	} while (this->_phone_number.empty() || !this->valid_number(_phone_number));
 
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, this->_darkest_secret);
+	if (std::cin.eof())
+		return ;
 }
 
 int	Contact::valid_number(std::string str)

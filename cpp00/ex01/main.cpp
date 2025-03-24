@@ -15,23 +15,28 @@ void	interface(PhoneBook book)
 
 	while (input != "EXIT")
 	{
+		if (std::cin.eof())
+		{
+			std::cout << "\033[2J\033[;H";
+			break ;
+		}
 		std::cout << "\033[2J\033[;H";
 		std::cout << "Commands:\nADD, SEARCH, EXIT, HELP\n" << std::endl;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
-			break;
+			break ;
 		if (input == "ADD")
 			book.add();
 		else if (input == "SEARCH")
 		{
 			book.display();
-			std::cout << "Press a key to exit." << std::endl;
+			std::cout << "Press return to go back to the menu." << std::endl;
 			std::getline(std::cin, input);
 		}
 		else if (input == "HELP")
 		{
 			display_help();
-			std::cout << "Press a key to exit." << std::endl;
+			std::cout << "Press return to go back to the menu." << std::endl;
 			std::getline(std::cin, input);
 		}
 	}
