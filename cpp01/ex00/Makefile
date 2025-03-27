@@ -3,7 +3,7 @@ SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 INCLUDE = Zombie.hpp
 OBJS = ${SRCS:.cpp=.o}
 
-CC = c++;
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 .cpp.o:
