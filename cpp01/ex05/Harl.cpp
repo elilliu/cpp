@@ -23,3 +23,24 @@ void	Harl::_error()
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now.\n";
 }
+
+void	Harl::complain(std::string level)
+{
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	void	(Harl::*funcs[])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+
+	bool	found = false;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
+			(this->*funcs[i])();
+			found = true;
+		}
+	}
+
+	if (!found)
+		std::cout << "Level of complaint not found" << std::endl;
+}
