@@ -7,7 +7,7 @@ class Fixed
 {
 	private:
 		int					_value;
-		static const int	_fract;
+		static const int	_fract = 8;
 	public:
 		Fixed();
 		Fixed(Fixed& nb);
