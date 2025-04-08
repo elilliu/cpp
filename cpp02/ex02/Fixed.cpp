@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+// CONSTRUCTORS //
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -64,3 +66,42 @@ std::ostream&	operator<<(std::ostream& out, const Fixed& nb)
 	out << nb.toFloat();
 	return (out);
 }
+
+// Fixed&	operator+(const Fixed& other);
+// Fixed&	operator-(const Fixed& other);
+// Fixed&	operator*(const Fixed& other);
+// Fixed&	operator/(const Fixed& other);
+
+// COMPARISON OPERATORS //
+
+bool	Fixed::operator>(const Fixed& other)
+{
+	return (this->toFloat() > other.toFloat());
+}
+
+bool	Fixed::operator<(const Fixed& other)
+{
+	return (this->toFloat() < other.toFloat());
+}
+
+bool	Fixed::operator>=(const Fixed& other)
+{
+	return (this->toFloat() >= other.toFloat());
+}
+
+bool	Fixed::operator<=(const Fixed& other)
+{
+	return (this->toFloat() <= other.toFloat());
+}
+
+bool	Fixed::operator==(const Fixed& other)
+{
+	return (this->toFloat() == other.toFloat());
+}
+
+bool	Fixed::operator!=(const Fixed& other)
+{
+	return (this->toFloat() != other.toFloat());
+}
+
+// ARITHMETIC OPERATORS //
