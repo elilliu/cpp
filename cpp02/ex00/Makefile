@@ -1,10 +1,10 @@
-NAME = harl
-SRCS = main.cpp Harl.cpp
-INCLUDE = Harl.hpp
+NAME = fixed
+SRCS = main.cpp Fixed.cpp
+INCLUDE = Fixed.hpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
-CFLAGS = -Wextra -Werror -Wall -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 .cpp.o:
 		${CC} ${CFLAGF} -c $< -o $@
