@@ -20,6 +20,7 @@ int	main(int ac, char **av)
 	oldFile.close();
 
 	std::string oldContent = av[2];
+	std::string newContent = av[3];
 
 	if (oldContent.empty())
 		return (std::cout << "Please provide a content to replace.\n", 1);
@@ -27,7 +28,8 @@ int	main(int ac, char **av)
 	for (i = buff.find(oldContent, 0); i != std::string::npos; i = buff.find(oldContent, i))
 	{
 		buff.erase(i, oldContent.size());
-		buff.insert(i, av[3]);
+		buff.insert(i, newContent);
+		i += newContent.size();
 	}
 
 	newFileName = av[1];
