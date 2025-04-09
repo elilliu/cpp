@@ -6,16 +6,17 @@ Fixed::Fixed()
 	this->_value = 0;
 }
 
-Fixed::Fixed(Fixed& nb)
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = nb;
+	this->_value = other._value;
 }
 
-Fixed& Fixed::operator=(const Fixed& nb)
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = nb.getRawBits();
+	if (this != &other)
+		this->_value = other.getRawBits();
 	return (*this);
 }
 

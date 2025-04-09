@@ -10,8 +10,8 @@ class Fixed
 		static const int	_fract = 8;
 	public:
 		Fixed();
-		Fixed(Fixed& nb);
-		Fixed& operator=(const Fixed& nb);
+		Fixed(const Fixed& other);
+		Fixed& operator=(const Fixed& other);
 		~Fixed();
 		int		getRawBits() const;
 		void	setRawBits(int const raw);
