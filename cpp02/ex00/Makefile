@@ -7,7 +7,7 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 .cpp.o:
-		${CC} ${CFLAGF} -c $< -o $@
+		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS} ${INCLUDE} Makefile
 		${CC} ${CFLAGS} -I ./ -o $@ ${OBJS}
