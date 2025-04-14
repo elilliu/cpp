@@ -1,10 +1,10 @@
-NAME = harlFilter
-SRCS = main.cpp Harl.cpp
-INCLUDE = Harl.hpp
+NAME = ClapTrap
+SRCS = main.cpp ClapTrap.cpp
+INCLUDE = ClapTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
-CFLAGS = -Wextra -Werror -Wall -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 .cpp.o:
 		${CC} ${CFLAGS} -c $< -o $@
