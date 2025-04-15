@@ -29,4 +29,9 @@ int	main()
 
 	FragTrap	anonymous;
 	std::cout << '\n';
+
+	FragTrap	test = ralph;
+	std::cout << '\n';
+
+	return (0);
 }

@@ -34,6 +34,21 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	std::cout << " They have " << this->_hitPoints << " health points, " << this->_energyPoints << " energy points, and " << this->_attackDamage << " of attack damage." << std::endl;
 }
 
+ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
+{
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_name += "_v2";
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	std::cout << "ClapTrap " << this->_name << " has been created.\n";
+	std::cout << "They have " << this->_hitPoints << " health points, " << this->_energyPoints << " energy points, and " << this->_attackDamage << " of attack damage." << std::endl;
+	return (*this);
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->_name << " has been destroyed." << std::endl;
