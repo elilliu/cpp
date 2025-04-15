@@ -1,6 +1,6 @@
-NAME = ClapTrap
-SRCS = main.cpp ClapTrap.cpp
-INCLUDE = ClapTrap.hpp
+NAME = ScavTrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+INCLUDE = ClapTrap.hpp ScavTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
