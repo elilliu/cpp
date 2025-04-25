@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat(): Animal()
+Cat::Cat()
 {
 	this->_type = "Cat";
 	this->_brain = new Brain();
@@ -9,7 +9,7 @@ Cat::Cat(): Animal()
 
 Cat::Cat(const Cat& copy): Animal(copy)
 {
-	this->_brain = copy._brain;
+	*this = copy;
 	std::cout << "A cat has been created by copying another cat.\n";
 }
 

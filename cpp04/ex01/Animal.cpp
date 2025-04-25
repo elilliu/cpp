@@ -7,7 +7,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal& copy)
 {
-	this->_type = copy._type;
+	*this = copy;
 	std::cout << "An animal has been created by copying another animal.\n";
 }
 
@@ -15,6 +15,7 @@ Animal&	Animal::operator=(const Animal& copy)
 {
 	if (this != &copy)
 		this->_type = copy._type;
+	std::cout << "An animal has been created via copy operator.\n";
 	return (*this);
 }
 

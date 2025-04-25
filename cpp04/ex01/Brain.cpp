@@ -6,7 +6,7 @@ Brain::Brain(){
 
 Brain::Brain(const Brain& copy){
 	*this = copy;
-	std::cout << "A brain has been copied by copying another brain.\n";
+	std::cout << "A brain has been created by copying another brain.\n";
 }
 
 Brain&	Brain::operator=(const Brain& copy){
@@ -15,7 +15,7 @@ Brain&	Brain::operator=(const Brain& copy){
 		for (int i = 0; i < 100; i++)
 			this->_ideas[i] = copy._ideas[i];
 	}
-	std::cout << "A brain has been copied via copy operator.\n";
+	std::cout << "A brain has been created via copy operator.\n";
 	return (*this);
 }
 
