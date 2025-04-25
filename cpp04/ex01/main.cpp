@@ -33,5 +33,13 @@ int	main()
 	for (int i = 0; i < 10; i++)
 		delete flock[i];
 
+	std::cout << '\n';
+
+	const Animal*	random = new Animal();
+
+	random->makeSound();
+
+	delete random;
+
 	return (0);
 }
