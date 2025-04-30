@@ -1,6 +1,6 @@
-NAME = Bureaucrat
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
-INCLUDE = Bureaucrat.hpp Form.hpp
+NAME = SpecificForms
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+INCLUDE = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 
 OBJS_DIR = objects
 OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o}}

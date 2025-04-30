@@ -1,39 +1,70 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main()
 {
 	try
 	{
+		std::cout << "TEST 1\n\n";
+
 		Bureaucrat	michel("Michel", 5);
-		Form		document("Very important paper", 4, 4);
+		ShrubberyCreationForm	shrubForm("Garden");
 
 		std::cout << michel;
 		std::cout << '\n';
-		std::cout << document;
+		std::cout << shrubForm;
 		std::cout << '\n';
 
-		michel.signForm(document);
-		std::cout << '\n';
+		michel.signForm(shrubForm);
+		michel.executeForm(shrubForm);
 
-		michel.incrementGrade();
+		std::cout << "\n-------------------------------------\n\n";
+		std::cout << "TEST 2\n\n";
 
+		Bureaucrat	herve("Hervé", 62);
+		RobotomyRequestForm	robotForm("The subject of the experiment");
+
+		std::cout << herve;
 		std::cout << michel;
 		std::cout << '\n';
-		
-		michel.signForm(document);
+		std::cout << robotForm;
 		std::cout << '\n';
 
-		std::cout << document;
+		michel.executeForm(robotForm);
+		herve.signForm(robotForm);
+		herve.executeForm(robotForm);
+		michel.executeForm(robotForm);
+
+		std::cout << "\n-------------------------------------\n\n";
+		std::cout << "TEST 3\n\n";
+
+		PresidentialPardonForm	presForm("The sinner");
+
+		std::cout << herve;
+		std::cout << michel;
+		std::cout << '\n';
+		std::cout << presForm;
 		std::cout << '\n';
 
-		Form	document2("Nuclear codes", -10, -10);
-		std::cout << document2;
+		herve.executeForm(presForm);
+		herve.signForm(presForm);
+		michel.signForm(presForm);
+		herve.executeForm(presForm);
+		michel.executeForm(presForm);
+
+		std::cout << "\n-------------------------------------\n\n";
+
+		Bureaucrat	tooGoodToBeTrue("Dream", -2);
+
+		std::cout << tooGoodToBeTrue;
 	}
 
-	catch (std::exception &except)
+	catch (std::exception &e)
 	{
-		std::cerr << except.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	return (0);

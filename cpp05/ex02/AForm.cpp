@@ -76,17 +76,17 @@ int	AForm::getExcecGrade() const
 
 const char*	AForm::GradeTooHighException::what() const throw()
 {
-	return ("The form's grade is too high.");
+	return ("The form's grade is too high");
 }
 
 const char*	AForm::GradeTooLowException::what() const throw()
 {
-	return ("The form's grade is too low.");
+	return ("The form's grade is too low");
 }
 
 const char*	AForm::FormNotSignedException::what() const throw()
 {
-	return ("The form isn't signed.");
+	return ("The form isn't signed");
 }
 
 
