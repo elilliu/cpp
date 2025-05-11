@@ -1,6 +1,6 @@
-NAME = convert
-SRCS = main.cpp ScalarConverter.cpp
-INCLUDE = ScalarConverter.hpp
+NAME = serialize
+SRCS = main.cpp Serializer.cpp
+INCLUDE = Serializer.hpp Data.hpp
 
 OBJS_DIR = objects
 OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o}}

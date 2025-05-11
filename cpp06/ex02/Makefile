@@ -1,6 +1,6 @@
-NAME = convert
-SRCS = main.cpp ScalarConverter.cpp
-INCLUDE = ScalarConverter.hpp
+NAME = identify
+SRCS = main.cpp Base.cpp
+INCLUDE = Base.hpp A.hpp B.hpp C.hpp
 
 OBJS_DIR = objects
 OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o}}
