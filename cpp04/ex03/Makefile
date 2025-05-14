@@ -1,6 +1,6 @@
 NAME = Interfaces
-SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp
-INCLUDE = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+INCLUDE = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
 OBJS_DIR = objects
 OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o}}
@@ -8,15 +8,15 @@ OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS:.cpp=.o}}
 DEPS_DIR = dependances
 DEPS = ${addprefix ${DEPS_DIR}/, ${OBJS:.o=.d}}
 
-CC = c++
+CXX = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g -MMD -MP
 
 ${OBJS_DIR}/%.o: %.cpp ${INCLUDE}
 		mkdir -p ${OBJS_DIR} ${DEPS_DIR}
-		${CC} ${CFLAGS} -c $< -o $@ -MF ${DEPS_DIR}/$*.d
+		${CXX} ${CFLAGS} -c $< -o $@ -MF ${DEPS_DIR}/$*.d
 
 ${NAME}: ${OBJS} ${INCLUDE} Makefile
-		${CC} ${CFLAGS} ${OBJS} -I ./ -o $@
+		${CXX} ${CFLAGS} ${OBJS} -I ./ -o $@
 
 all: ${NAME}
 
