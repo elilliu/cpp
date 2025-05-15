@@ -33,8 +33,8 @@ void	MateriaSource::learnMateria(AMateria* m) {
 			return ;
 		}
 	}
-
-	std::cout << "You can't learn more materias." << std::endl;
+	delete (m);
+	std::cout << "You can't add more materias to your grimoire." << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const& type) {
