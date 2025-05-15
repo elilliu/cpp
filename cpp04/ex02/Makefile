@@ -1,4 +1,4 @@
-NAME = Animals
+NAME = abstract
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 INCLUDE = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
